@@ -1,0 +1,133 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Planful",
+    "description": "Planful - Transfer file",
+    "version": "1.0"
+  },
+  "host": "demo06.planful.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/financemodel/data/rules": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Get Rules",
+        "description": "Get Rules",
+        "operationId": "GETRULES",
+        "parameters": []
+      }
+    },
+    "/financemodel/data/transferfile": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "File load",
+        "description": "File load",
+        "operationId": "FILELOAD",
+        "parameters": [
+          {
+            "name": "DataLoadRuleName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ColumnDelimiter",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": ","
+          },
+          {
+            "in": "formData",
+            "name": "file",
+            "type": "file",
+            "description": "The file to upload."
+          }
+        ]
+      }
+    },
+    "/financemodel/data/transfer": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Load data",
+        "description": "Load data",
+        "operationId": "POSTDATA",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "DataLoadRuleConfig": {
+                  "type": "object",
+                  "properties": {
+                    "DataLoadRuleName": {
+                      "type": "string",
+                      "description": "DataLoadRuleName"
+                    },
+                    "ColumnDelimiter": {
+                      "type": "string",
+                      "description": "ColumnDelimiter"
+                    },
+                    "RowDelimiter": {
+                      "type": "string",
+                      "description": "RowDelimiter"
+                    },
+                    "TextQualifier": {
+                      "type": "string",
+                      "description": "TextQualifier"
+                    }
+                  },
+                  "description": "DataLoadRuleConfig"
+                },
+                "Payload": {
+                  "type": "string",
+                  "description": "Payload"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "basic-auth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basic-auth": []
+    }
+  ],
+  "tags": []
+}

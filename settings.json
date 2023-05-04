@@ -1,0 +1,9 @@
+{
+  "connectorId": "shared_planful-5f954efa253c07222b-5f10b0b430f39fdeb7",
+  "environment": "Default-cc51c983-f8e2-47ef-97d0-e764fd4630e0",
+  "apiProperties": "apiProperties.json",
+  "apiDefinition": "apiDefinition.swagger.json",
+  "icon": "icon.png",
+  "powerAppsUrl": "https://api.powerapps.com",
+  "powerAppsApiVersion": "2016-11-01"
+}

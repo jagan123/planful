@@ -4,9 +4,9 @@
       "username": {
         "type": "securestring",
         "uiDefinition": {
-          "displayName": "username",
-          "description": "The username for this api",
-          "tooltip": "Provide the username",
+          "displayName": "Access ID",
+          "description": "The Access ID for this api",
+          "tooltip": "Provide the Access ID",
           "constraints": {
             "tabIndex": 2,
             "clearText": true,
@@ -17,9 +17,9 @@
       "password": {
         "type": "securestring",
         "uiDefinition": {
-          "displayName": "password",
-          "description": "The password for this api",
-          "tooltip": "Provide the password",
+          "displayName": "Access Key",
+          "description": "The Access Key for this api",
+          "tooltip": "Provide the Access Key",
           "constraints": {
             "tabIndex": 3,
             "clearText": false,
@@ -30,6 +30,7 @@
     },
     "iconBrandColor": "#007ee5",
     "capabilities": [],
-    "publisher": "Jagan Ganti"
+    "publisher": "Planful",
+    "stackOwner": "Planful"
   }
 }

@@ -2,8 +2,13 @@
   "swagger": "2.0",
   "info": {
     "title": "Planful",
-    "description": "Planful - Transfer file",
-    "version": "1.0"
+    "description": "Planful is the pioneer of financial performance management cloud software. The Planful platform is used by the Office of the CFO around the globe to streamline business-wide planning, budgeting, consolidations, reporting, and visual analytics.",
+    "version": "1.0",
+    "contact": {
+        "name": "Planful",
+        "url": "https://www.planful.com",
+        "email": "support@planful.com"
+      }
   },
   "host": "demo06.planful.com",
   "basePath": "/",
@@ -23,8 +28,7 @@
         },
         "summary": "Get Rules",
         "description": "Get Rules",
-        "operationId": "GETRULES",
-        "parameters": []
+        "operationId": "GETRULES"
       }
     },
     "/financemodel/data/transferfile": {
@@ -39,17 +43,23 @@
           }
         },
         "summary": "File load",
+        "x-ms-summary": "File load",
         "description": "File load",
         "operationId": "FILELOAD",
         "parameters": [
+            
           {
             "name": "DataLoadRuleName",
+            "x-ms-summary": "Data load rule name",
+            "description": "Data load rule name",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "ColumnDelimiter",
+            "x-ms-summary": "Column Delimiter",
+            "description": "Column delimiter",
             "in": "query",
             "required": true,
             "type": "string",
@@ -57,60 +67,10 @@
           },
           {
             "in": "formData",
+            "x-ms-summary": "The file",
             "name": "file",
             "type": "file",
             "description": "The file to upload."
-          }
-        ]
-      }
-    },
-    "/financemodel/data/transfer": {
-      "post": {
-        "responses": {
-          "default": {
-            "description": "default",
-            "schema": {}
-          }
-        },
-        "summary": "Load data",
-        "description": "Load data",
-        "operationId": "POSTDATA",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "DataLoadRuleConfig": {
-                  "type": "object",
-                  "properties": {
-                    "DataLoadRuleName": {
-                      "type": "string",
-                      "description": "DataLoadRuleName"
-                    },
-                    "ColumnDelimiter": {
-                      "type": "string",
-                      "description": "ColumnDelimiter"
-                    },
-                    "RowDelimiter": {
-                      "type": "string",
-                      "description": "RowDelimiter"
-                    },
-                    "TextQualifier": {
-                      "type": "string",
-                      "description": "TextQualifier"
-                    }
-                  },
-                  "description": "DataLoadRuleConfig"
-                },
-                "Payload": {
-                  "type": "string",
-                  "description": "Payload"
-                }
-              }
-            }
           }
         ]
       }
@@ -129,5 +89,19 @@
       "basic-auth": []
     }
   ],
-  "tags": []
+  "tags": [],
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "https://www.planful.com/"
+    },
+    {
+      "propertyName": "Privacy policy",
+      "propertyValue": "https://planful.com/privacy-policy"
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": "Finance"
+    }
+  ]
 }
